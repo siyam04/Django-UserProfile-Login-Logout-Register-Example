@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Login</title>
+{% endblock %}
+
+{% block body %}
+    <div class="login">
+        <div class="container">
+            <div class="jumbotron">
+                <h1>WELCOME</h1>
+                <h3>You can Login here</h3>
+                <hr>
+{#                <h2>Login</h2>#}
+                <form action="{% url 'accounts:view-profile' %}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-danger">
+                    LOGIN
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+

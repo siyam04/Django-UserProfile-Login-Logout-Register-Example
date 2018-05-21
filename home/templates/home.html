@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="container container-fluid">
+        <div class="col-md-8">
+            <h1 style="color: orangered">HOME</h1>
+            <h3 style="color: black">Hey '{{ user }}', This is home !</h3>
+            <br>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.post }}
+                <br>
+                <button type="submit" class="btn btn-danger">
+                    SUBMIT
+                </button>
+            </form>
+            <hr>
+            {% for post in posts %}
+                <h3 style="color: white">{{ post.pk }}-{{ post.post }}</h3>
+                <p><b>Posted by: {{ post.user.get_full_name }} on {{ post.created }}</b></p>
+            {% endfor %}
+            <hr>
+        </div>
+        <div class="col-md-4">
+            <h1 style="color: orangered">OTHER PEOPLE</h1>
+            <hr>
+            {% for user in users %}
+                <a href="{% url 'accounts:view-profile' user.pk %}">
+                    <h3 style="color: black">{{ user.username }}</h3>
+                </a>
+            {% endfor %}
+            <hr>
+{#            <h3 style="color: orangered">FRIENDS</h3>#}
+{#            <hr>#}
+{#            {% for friend in friends %}#}
+{#                <a href="{% url 'accounts:view-profile' user.pk %}">#}
+{#                    <h3 style="color: black">{{ friend.username }}</h3>#}
+{#                </a>#}
+{#            {% endfor %}#}
+{#            <hr>#}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+

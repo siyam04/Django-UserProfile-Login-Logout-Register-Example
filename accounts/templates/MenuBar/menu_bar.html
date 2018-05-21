@@ -1,0 +1,21 @@
+{% if user.is_authenticated %}
+    <ul class="nav navbar-nav">
+        <li><a href="{% url 'home:home' %}">HOME</a></li>
+        <li><a href="{% url 'accounts:view-profile' user.pk%}">PROFILE</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'accounts:logout' %}">LOGOUT</a></li>
+    </ul>
+
+{% else %}
+    <ul class="nav navbar-nav">
+        <li>
+            <a href="{% url 'accounts:reset_password' %}">RESET PASSWORD</a>
+        </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'accounts:login' %}">LOGIN</a></li>
+        <li><a href="{% url 'accounts:register' %}">REGISTER</a></li>
+    </ul>
+{% endif %}

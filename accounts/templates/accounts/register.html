@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Registration</title>
+{% endblock %}
+
+{% block body %}
+    <div class="login">
+        <div class="container">
+            <div class="jumbotron">
+                <h1>REGISTRATION</h1>
+                <p>Please Register Before Login</p>
+                <hr>
+                <form action="{% url 'accounts:view-profile' %}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-success">
+                    REGISTER
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

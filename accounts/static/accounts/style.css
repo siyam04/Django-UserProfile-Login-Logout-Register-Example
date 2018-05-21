@@ -1,0 +1,13 @@
+body{
+    background-color: cornflowerblue;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-brand{
+    font-family: 'Berkshire Swash', cursive;
+    color: orangered;
+}

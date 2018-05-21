@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Logged Out</title>
+{% endblock %}
+
+{% block body %}
+    <div class="logout">
+        <div class="container">
+            <div class="jumbotron">
+                <h1>You have Logged Out</h1>
+                <hr>
+                <h2>Please Login Again</h2>
+                <hr>
+                <button class="btn btn-danger">
+                    <a href={% url 'accounts:login' %}>LOGIN</a>
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
