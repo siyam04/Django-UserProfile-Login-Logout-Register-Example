@@ -73,34 +73,3 @@ def change_password(request):
     else:
         form = PasswordChangeForm(user=request.user)
         return render(request, 'accounts/change_password.html', {'form': form})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
